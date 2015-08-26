@@ -1,0 +1,14 @@
+{
+  "name": "boneserver",
+  "version": "0.0.0",
+  "description": "Server to the bone",
+  "main": "server.js",
+  "repository": "",
+  "author": "XYZ",
+  "dependencies": {
+   
+    "express": "~3.2.4",
+    
+		"node-inspector" : "0.7.x"
+  }
+}
