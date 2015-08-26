@@ -15,9 +15,7 @@ function()
 app.get('/boneGet', 
 	function(req,res)
 	{
-		/*Selecting all items from the seven wonders database
-		Not displaying the id field. converting to array */ 
-		// var items = db.SevenWonders.find({}, {_id : 0}).toArray();
+		
 		 var items = [{name:'Giza Necropolis', location: 'Giza, Eqypt'},
 		 	{name:'Great Wall of China', location: 'China'},
 		 	{name:'Petra', location: 'Maan Governorate, Jordan'},
