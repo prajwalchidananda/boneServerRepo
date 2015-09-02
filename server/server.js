@@ -13,7 +13,7 @@ app.get('/boneGet',
 	function(req,res)
 	{
 		
-		 var items = [{name:'Giza Necropolis', location: 'Giza, Eqypt'},
+		 var items = [{name:'Chidananda', location: 'Giza, Eqypt'},
 		 	{name:'Great Wall of China', location: 'China'},
 		 	{name:'Petra', location: 'Maan Governorate, Jordan'},
 		 	{name: 'Colosseum', location: 'Rome, Italy'},
