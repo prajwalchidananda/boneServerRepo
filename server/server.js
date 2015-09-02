@@ -1,5 +1,7 @@
 var express = require('express');
 var app = express(); 
+//Serve static files such as index.html
+app.use(express.static(__dirname+"/"));
 
 app.configure(
 function()
@@ -8,7 +10,7 @@ function()
 	app.use(express.bodyParser());
 }
 );
-
+//Get function
 app.get('/boneGet', 
 	function(req,res)
 	{
@@ -24,7 +26,7 @@ app.get('/boneGet',
 		res.send(items);
 	}
 );
-
+//Post function
 app.post('/bonePost', function (req, res) {
   
   res.send('Got a POST request');
