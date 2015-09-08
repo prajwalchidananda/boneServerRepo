@@ -5,37 +5,37 @@ return oController.extend("server.webUI.App",{
         var oVizFrame = this.getView().byId("idVizFrameScatter");
         var oPopOver = this.getView().byId("idPopOver");
         var oData = {
-            "book" : [{
-                "Revenue" : 500,
-                "Profit" : 100,
-                "Units Sold" : 10,
-                "Item Category" : "Dairy"
+            "bone" : [{
+                "Bone ID" : 'BB1',
+                "Sensor Value" : 112,
+                "Time" : 2
             },
             {
-                "Revenue" : 400,
-                "Profit" : 200,
-                "Units Sold" : 50,
-                "Item Category" : "Vegetarian"
+                "Bone ID" : 'BB2',
+                "Sensor Value" : 83,
+                "Time" : 7
+            },
+            {
+                "Bone ID" : 'BB1',
+                "Sensor Value" : 67,
+                "Time" : 9
             }]
         };
         var oModel = new sap.ui.model.json.JSONModel(oData);
         var oDataset = new sap.viz.ui5.data.FlattenedDataset({
             dimensions: [{
-                name: 'Item Category',
-                value: "{Item Category}"
+                name: 'Bone ID',
+                value: "{Bone ID}"
             }],
             measures: [{
-                name: 'Revenue',
-                value: '{Revenue}'
+                name: 'Sensor Value',
+                value: '{Sensor Value}'
             }, {
-                name: 'Profit',
-                value: '{Profit}'
-            }, {
-                name: 'Units Sold',
-                value: '{Units Sold}'
+                name: 'Time',
+                value: '{Time}'
             }],
             data: {
-                path: "/book"
+                path: "/bone"
             }
         });
 
@@ -82,17 +82,17 @@ return oController.extend("server.webUI.App",{
         var feedValueAxis = new sap.viz.ui5.controls.common.feeds.FeedItem({
                 'uid': "valueAxis",
                 'type': "Measure",
-                'values': ["Units Sold"]
+                'values': ["Time"]
             }),
             feedValueAxis2 = new sap.viz.ui5.controls.common.feeds.FeedItem({
                 'uid': "valueAxis2",
                 'type': "Measure",
-                'values': ["Profit"]
+                'values': ["Sensor Value"]
             }),
             feedColor = new sap.viz.ui5.controls.common.feeds.FeedItem({
                 'uid': "color",
                 'type': "Dimension",
-                'values': ["Item Category"]
+                'values': ["Bone ID"]
             });
 
         oVizFrame.addFeed(feedValueAxis);
